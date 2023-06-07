@@ -34,7 +34,7 @@ if choice =='HOME':
     st.title(":blue[Plant Disease Detection & Classification ]")
     st.markdown("This Application makes easy for farmers, biologists, and botanists to identify plant or crop types or type of disease and spot any problems in them. The software uploads the plant image to the server for analysis using the CNN classifier model. When a sickness is found, the user is shown the problem and the Remidies....", unsafe_allow_html=True)
     st.subheader("To predict the Disease of your plant Go to Plant Disease in Dashboard.. 👈🏻")
-    #st.caption(":orange[To view my Linkedin Profile click on ]👉🏻 https://www.linkedin.com/in/uday-kiran-4aa25b1b5/")
+    st.caption(":orange[To view my Linkedin Profile click on ]👉🏻 https://www.linkedin.com/in/uday-kiran-4aa25b1b5/")
     st.subheader('Model')
     st.markdown('There are 38 classes for classification of 14 plants')
     st.dataframe(df_class_names,1000,1400)
@@ -63,8 +63,6 @@ if choice == 'Plant Disease':
                  with st.spinner('Your image is processing'):
                     prediction = model.predict(img)
                     st.success('Done!')
-                    st.write(prediction.shape)
-                    st.write(prediction)
                     k=class_names[np.argmax(prediction)]
                     a=k.split('___')
                     if a[1]=='healthy':
